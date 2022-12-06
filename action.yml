@@ -1,6 +1,6 @@
 ---
 name: "Permify Schema Validate Action"
-description: "Runs the `permify validate` command on the given schema (authorization model) and relationships (sample authorization data) and assertions (sample check queries and results)."
+description: "Runs the `permify validate` command on the given schema validation file."
 author: "Permify"
 
 inputs:
