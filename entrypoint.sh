@@ -1,2 +1,2 @@
 #/bin/bash
-/permify validate $INPUT_VALIDATION_FILE
+/permify validate $INPUT_VALIDATIONFILE
