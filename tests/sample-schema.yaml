@@ -1,0 +1,31 @@
+schema: >-
+    entity user {}
+
+    entity organization {
+
+        relation admin @user
+        relation member @user
+
+        action create_repository = (admin or member)
+        action delete = admin
+    }
+
+    entity repository {
+
+        relation owner @user
+        relation parent @organization
+
+        action push = owner
+        action read = (owner and (parent.admin and parent.member))
+        action delete = (parent.member and (parent.admin or owner))
+    }
+
+relationships:
+    - "organization:1#admin@user:1"
+    - "organization:1#member@user:1"
+    - "repository:1#owner@user:1"
+
+assertions:
+    - "can user:1 push repository:1": true
+    - "can user:1 push repository:2": false
+    - "can user:1 push repository:3": false

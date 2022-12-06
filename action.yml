@@ -1,0 +1,14 @@
+---
+name: "Permify Schema Validate Action"
+description: "Runs the `permify validate` command on the given schema (authorization model) and relationships (sample authorization data) and assertions (sample check queries and results)."
+author: "Permify"
+
+inputs:
+  validationFile:
+    description: "path to the YAML file containing schema (authorization model), relationships (sample authorization data), assertions (sample check queries and results)."
+    required: true
+    default: '/schemas'
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
