@@ -11,6 +11,8 @@
 
 This repository runs the `permify validate` command on the given schema (authorization model) and relationships (sample authorization data) and assertions (sample check queries and results).
 
+You can find detailed information on this repository in the [Testing & Validation](https://docs.permify.co/docs/getting-started/testing) part of our documentation.
+
 #### Example Schema Validation YAML File
 
 ```yaml
