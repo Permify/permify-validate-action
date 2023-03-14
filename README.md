@@ -75,6 +75,18 @@ Permify is an **open-source authorization service** for creating and maintaining
 * [Permify playground](https://play.permify.co)
 * [Permify GitHub Repository](https://github.com/Permify/permify)
 
+## Testing in Local
+
+You can also test your new authorization model in your local (Permify clone) without using [permify-validate-action] at all. 
+
+For that open up a new file and add a schema yaml file inside. Then build your project with, run `make run` command and run `./permify validate {path of your schema validation file}`. 
+
+If we use the above example schema validation file, after running `./permify validate {path of your schema validation file}` it gives a result on the terminal as:
+
+![schema-validation](https://user-images.githubusercontent.com/34595361/207110538-9837b09d-26b4-409a-a309-a21f66e6677a.png)
+
+[permify-validate-action]: https://github.com/Permify/permify-validate-action
+
 ## Community & Support
 Join our [Discord channel](https://discord.gg/MJbUjwskdH) for issues, feature requests, feedbacks or anything else. We love to talk about authorization and access control :heart:
 
