@@ -24,8 +24,8 @@ schema: >-
         relation admin @user
         relation member @user
 
-        action create_repository = (admin or member)
-        action delete = admin
+        permission create_repository = (admin or member)
+        permission delete = admin
     }
 
     entity repository {
@@ -33,9 +33,9 @@ schema: >-
         relation owner @user
         relation parent @organization
 
-        action push = owner
-        action read = (owner and (parent.admin and parent.member))
-        action delete = (parent.member and (parent.admin or owner))
+        permission push = owner
+        permission read = (owner and (parent.admin and parent.member))
+        permission delete = (parent.member and (parent.admin or owner))
     }
 
 relationships:
@@ -44,9 +44,9 @@ relationships:
     - "repository:1#owner@user:1"
 
 assertions:
-    - "can user:1 push repository:1": true
-    - "can user:1 push repository:2": false
-    - "can user:1 push repository:3": false
+    - "user:1 push repository:1": true
+    - "user:1 push repository:2": false
+    - "user:1 push repository:3": false
 ```
 
 ### Usage
@@ -68,7 +68,7 @@ steps:
     validationFile: "https://gist.github.com/permify-bot/bb8f95acb64525d2a41688ae0a6f4274"
 ```
 
-Permify is an **open-source authorization service** for creating and maintaining fine-grained authorizations accross your individual applications and services.
+Permify is an **open-source authorization service** for creating and maintaining fine-grained authorizations across your individual applications and services.
 
 * [Permify website](https://permify.co)
 * [Permify documentation](https://docs.permify.co/docs/intro)
