@@ -47,10 +47,22 @@ relationships:
   - "organization:1#member@user:1"
   - "repository:1#owner@user:1"
 
-assertions:
-  - "user:1 push repository:1": true
-  - "user:1 push repository:2": false
-  - "user:1 push repository:3": false
+scenarios:
+  - name: "scenario 1"
+    description: "test description"
+    checks:
+      - entity: "repository:1"
+        subject: "user:1"
+        assertions:
+          push : true
+      - entity: "repository:2"
+        subject: "user:1"
+        assertions:
+          push : false
+      - entity: "repository:3"
+        subject: "user:1"
+        assertions:
+          push : false
 ```
 
 ### Usage
