@@ -1,4 +1,4 @@
-schema: schemas/app.perm
+schema: tests/schemas/app.perm
 
 relationships:
     - "organization:1#admin@user:1"
