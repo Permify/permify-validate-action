@@ -1,0 +1,25 @@
+schema: schemas/app.perm
+
+relationships:
+    - "organization:1#admin@user:1"
+    - "organization:1#member@user:1"
+    - "repository:1#owner@user:1"
+
+attributes:
+
+scenarios:
+  - name: "scenario 1"
+    description: "test description"
+    checks:
+      - entity: "repository:1"
+        subject: "user:1"
+        assertions:
+          push : true
+      - entity: "repository:2"
+        subject: "user:1"
+        assertions:
+          push : false
+      - entity: "repository:3"
+        subject: "user:1"
+        assertions:
+          push : false
