@@ -20,4 +20,4 @@ jobs:
       - uses: "actions/checkout@v2"
       - uses: "./"
         with:
-          validationFile: "./tests/sample-schema-with-file-path.yaml"
+          validationFile: "./tests/schemas/sample-schema-with-file-path.yaml"
